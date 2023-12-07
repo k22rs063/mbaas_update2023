@@ -108,6 +108,20 @@
                     $("#display").html("update fail:" + JSON.stringify(error));
                 })
         }
+
+        function countData() {
+            UTdata.count().fetchAll()
+                .then(function(results) {
+                    $("#display").removeClass();
+                    $("#display").addClass("bg-success");
+                    $("#display").html(results.count);
+                })
+                .catch(function(error) {
+                    $("#display").removeClass();
+                    $("#display").addClass("bg-warning");
+                    $("#display").html("count fail:" + JSON.stringify(error));
+                })
+        }
     </script>
 </head>
 
